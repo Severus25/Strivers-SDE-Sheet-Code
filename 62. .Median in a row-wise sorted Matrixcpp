@@ -1,0 +1,14 @@
+// Problem Statement:
+// https://www.codingninjas.com/studio/problems/median-of-a-row-wise-sorted-matrix_1115473?utm_source=striver&utm_medium=website&utm_campaign=a_zcoursetuf
+
+// Problem Solution:
+int median(vector<vector<int>> &matrix, int m, int n) {
+    // Write your code here.
+    vector<int> idx(m,n);
+    vector<int> temp;
+    for (auto it : matrix) {
+        temp.insert(temp.end(), it.begin(), it.end());
+    }
+    sort(temp.begin(), temp.end());
+    return temp[n * m / 2];
+}
